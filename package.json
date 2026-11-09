@@ -1,7 +1,7 @@
 {
-  "name": "herdr-discord-presence",
+  "name": "herdr-core-discord-presence",
   "version": "0.1.0",
-  "description": "Herdr plugin: Discord Rich Presence for your Herdr session",
+  "description": "Counts-only Discord presence for local herdr-core agents",
   "type": "module",
   "private": true,
   "engines": {
@@ -10,9 +10,9 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "daemon": "node dist/daemon.js",
-    "stop": "node dist/stop.js",
-    "status": "node dist/status.js"
+    "test": "npm run build && node test.mjs",
+    "start": "node dist/daemon.js",
+    "dry-run": "node dist/daemon.js --dry-run"
   },
   "dependencies": {
     "@xhayper/discord-rpc": "^1.3.4"
